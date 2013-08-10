@@ -1,0 +1,27 @@
+<h1>Listing student_profiles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Avatar</th>
+    <th>About me</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @student_profiles.each do |student_profile| %>
+  <tr>
+    <td><%= student_profile.name %></td>
+    <td><%= student_profile.avatar %></td>
+    <td><%= student_profile.about_me %></td>
+    <td><%= link_to 'Show', student_profile %></td>
+    <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>
+    <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Student profile', new_student_profile_path %>
